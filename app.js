@@ -7,12 +7,27 @@ const app = express();
 //});
 
 
-//looger - morgan
-app.use((req,res,next) =>{
-    req.time = new Date(Date.now()).toString();
-    console.log(req.method, req.hostname,req.path,req.time);
-    next();
+//API Token
+
+app.use("/api",(req,res,next) =>{
+    let {token} = req.query;
+    if(token === "giveaccess"){
+        next();
+    }
+    res.send("access denied");
 });
+
+app.get("/api",(req,res)=>{
+  res.send("data"); //api?token=giveaccess
+});
+
+
+//looger - morgan
+// app.use((req,res,next) =>{
+// req.time = new Date(Date.now()).toString();
+// console.log(req.method, req.hostname,req.path,req.time);
+//  next();
+//});
 
 
 //404
