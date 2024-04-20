@@ -1,0 +1,40 @@
+It is an intermediary.
+
+Request -----> Middleware ------> Response
+
+IN EXPRESS
+Middleware in Express are functions that come into play after the erver receives the request and before the reponse is sent to the client.
+
+Common middleware funxtions:
+methodOverride
+bodyParser
+express.static
+express.urlencoded
+
+What Middlewares can do?
+Execute any code.
+Make changes to the request and the response objects.
+End the request-response cycle.
+Call the next middleware function in the stack.
+
+Using next
+The next middleware function is commonly denoted by a variable named 'next'.
+
+If the current middleware function does not end the request-response cycle,it must call next() to pass control to the next line middleware functions. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
