@@ -22,19 +22,9 @@ The next middleware function is commonly denoted by a variable named 'next'.
 
 If the current middleware function does not end the request-response cycle,it must call next() to pass control to the next line middleware functions. 
 
+Creating Utility Middleware
+Logger - print useful info on console
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+API Token as Query String
+api token = give access
 

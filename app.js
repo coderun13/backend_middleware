@@ -1,10 +1,25 @@
 const express = require("express");
 const app = express();
 
-app.use((resq,res) => {
-    console.log("Hi,I am middleware");
-    res.send("middleware finished");
+//app.use((resq,res) => {
+  //  console.log("Hi,I am middleware");
+    //res.send("middleware finished");
+//});
+
+
+//looger - morgan
+app.use((req,res,next) =>{
+    req.time = new Date(Date.now()).toString();
+    console.log(req.method, req.hostname,req.path,req.time);
+    next();
 });
+
+
+//404
+app.use((req,res)=>{
+    res.status(404).send("Page not Found");
+});
+
 
 app.get("/",(req,res)=> {
     res.send("Hi,I am root.");
