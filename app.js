@@ -14,7 +14,8 @@ app.use("/api",(req,res,next) =>{
     if(token === "giveaccess"){
         next();
     }
-    res.send("access denied");
+    throw new Error("Access Denied!");
+   // res.send("access denied");
 });
 
 app.get("/api",(req,res)=>{

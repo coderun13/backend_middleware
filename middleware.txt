@@ -27,4 +27,8 @@ Logger - print useful info on console
 
 API Token as Query String
 api token = give access
+token(/middleware) can be passed as a function also.
+
+Error Handling
+Express default error handler
 
