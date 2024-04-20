@@ -1,4 +1,4 @@
-const express = require("express");
+const express = require("express"); //requiring express
 const app = express();
 
 //app.use((resq,res) => {
@@ -33,18 +33,18 @@ app.get("/api",(req,res)=>{
 
 //404
 app.use((req,res)=>{
-    res.status(404).send("Page not Found");
+    res.status(404).send("Page not Found"); //error res
 });
 
 
 app.get("/",(req,res)=> {
-    res.send("Hi,I am root.");
+    res.send("Hi,I am root."); //root page
 });
 
 app.get("/random",(req,res)=> {
-    res.send("this is a random page");
+    res.send("this is a random page"); // random page
 });
 
 app.listen(8000,() =>{
-    console.log("server is listening at port 8000");
+    console.log("server is listening at port 8000"); // port
 });
