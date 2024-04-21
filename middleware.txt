@@ -32,3 +32,10 @@ token(/middleware) can be passed as a function also.
 Error Handling
 Express default error handler
 
+error handling middlewares ---> next() ---> next non err handling
+
+Error Class
+custom
+(status code,message)
+
+

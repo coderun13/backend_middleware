@@ -1,5 +1,6 @@
 const express = require("express"); //requiring express
 const app = express();
+const ExpressError = require("./ExpressError");
 
 //app.use((resq,res) => {
   //  console.log("Hi,I am middleware");
@@ -14,7 +15,7 @@ app.use("/api",(req,res,next) =>{
     if(token === "giveaccess"){
         next();
     }
-    throw new Error("Access Denied!");
+    throw new ExpressError(401,"Access Denied!");
    // res.send("access denied");
 });
 
